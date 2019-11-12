@@ -99,6 +99,7 @@ Code can be found [here](./queueconsumer/main.py)
 # Contributing
 
 Pull requests and issues are appreciated.
+
 This project has adopted the 
 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 For more information see the 
