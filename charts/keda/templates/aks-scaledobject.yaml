@@ -1,0 +1,50 @@
+apiVersion: keda.k8s.io/v1alpha1
+kind: ScaledObject
+metadata:
+  name: test-scaledobject
+  labels:
+    aadpodidbinding: {{ .Values.global.operatorName }}
+    app: test-scaledobject
+spec:
+  scaleType: job
+  pollingInterval: 15
+  maxReplicaCount: 4
+  cooldownPeriod: 10
+  jobTargetRef:
+    parallelism: 1
+    completions: 1
+    activeDeadlineSeconds: 180
+    backoffLimit: 6
+    template:
+      metadata:
+        labels:
+          aadpodidbinding: {{ .Values.global.operatorName }}
+          app: test-scaledobject
+      spec:
+        restartPolicy: Never
+        containers:
+        - name: queueconsumer
+          image: "{{ .Values.global.image.repository }}/queueconsumer:latest"
+          env:
+          - name: STORAGE_ACCOUNT
+            value: "{{ .Values.azureaccount.name }}"
+          - name: QUEUE_NAME
+            value: "{{ .Values.storage.queue.name }}"
+        
+        nodeSelector:
+          kubernetes.io/role: agent
+          beta.kubernetes.io/os: linux
+          type: virtual-kubelet
+        tolerations:
+        - key: virtual-kubelet.io/provider
+          operator: Exists
+        - key: azure.com/aci
+          effect: NoSchedule
+  triggers:
+  - type: azure-queue
+    authenticationRef:
+      name: azure-queue-auth
+    metadata:
+      queueName: "{{ .Values.storage.queue.name }}"
+      accountName: "{{ .Values.azureaccount.name }}"
+      useAAdPodIdentity: "true"

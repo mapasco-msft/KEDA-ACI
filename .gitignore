@@ -1,0 +1,10 @@
+terraform/secret.tfvars
+terraform/.terraform
+terraform/*.tfstate
+terraform/terraform.tfstate.backup
+terraform/.terraform.tfstate.lock.info
+charts/generated-yamls
+charts/main/charts/*.tgz
+charts/requirements.yaml
+deploy/*secret*
+.vscode

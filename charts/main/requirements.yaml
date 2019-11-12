@@ -1,0 +1,7 @@
+dependencies:
+- name: aad-pod-identity
+  version: "*"
+  repository: "file://../aad-pod-identity"
+- name: keda
+  version: "*"
+  repository: "file://../keda"

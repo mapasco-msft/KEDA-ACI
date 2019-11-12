@@ -1,0 +1,9 @@
+dependencies:
+- name: aad-pod-identity
+  repository: file://../aad-pod-identity
+  version: 0.1.0
+- name: keda
+  repository: file://../keda
+  version: 0.0.4
+digest: sha256:654affcd51963d227788562a15a0d7f64a6080ea22a3698686fde64ff2f69427
+generated: "2019-11-11T16:32:23.826276798-07:00"
