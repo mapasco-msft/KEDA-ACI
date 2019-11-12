@@ -65,6 +65,15 @@ requirement of Tiller. To run this:
 ```sh
 $ ./deploytokubernetes
 ```
+## 4. Push item to the Azure Queue
+In the Azure portal navigate to your Storage Account with the queue you created.
+Click `+` to add a message to the queue.
+
+`--or--`
+
+```sh
+$ az storage message get -q "queue" --auth-mode "login" --account-name $STORAGE_ACCOUNT
+```
 
 ## 4. Destroying Kube templates
 To destroy all running items on Kubernetes, run:
