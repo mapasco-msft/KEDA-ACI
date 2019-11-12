@@ -75,7 +75,7 @@ Click `+` to add a message to the queue.
 $ az storage message get -q "queue" --auth-mode "login" --account-name $STORAGE_ACCOUNT
 ```
 
-## 4. Destroying Kube templates
+## 5. Destroying Kube templates
 To destroy all running items on Kubernetes, run:
 
 ```sh
