@@ -3,6 +3,9 @@ This project enables [KEDA](https://github.com/kedacore/keda) to spawn jobs into
 Azure Containter Instances 
 ([ACI](https://azure.microsoft.com/en-us/services/container-instances/)).
 
+# Known Issues
+There is a known issue with ACI containers not having access to MSI, more can
+be found [here](https://github.com/Azure/azure-sdk-for-python/issues/8557).
 
 # Requirements
 
