@@ -95,3 +95,13 @@ Code can be found [here](./queueconsumer/main.py)
 # TODO
 1. Refactor [deployinfra.sh](./deploy/deployinfra.sh)
 2. Improve documentation
+
+# Contributing
+
+Pull requests and issues are appreciated.
+This project has adopted the 
+[Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+For more information see the 
+[Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) 
+or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) 
+with any additional questions or comments.
